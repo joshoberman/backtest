@@ -1,5 +1,5 @@
 runModel<-function(input){
-  
+
   theSeries<-as.numeric(input$employment)
   the_monthCounters<-input$empl_monthCounter
   theSeries.ts<-ts(theSeries,frequency = 12)
@@ -16,7 +16,7 @@ runModel<-function(input){
   output$back_test_monthCounters<-NA
   output$predictors<-NA;output$predictor_id<-input$predictor_id
   output
-  
+
 }
 
-save(runModel,file="Average.RData")
+save(runModel,file="R/Average.RData")

@@ -5,4 +5,3 @@ subsetToBaseDate<-function(input){
   input
 }
 
-save(subsetToBaseDate,file="subsetToBaseDate.RData")

@@ -24,7 +24,6 @@ parseJSON<-function(base64json){
   nPredictors<<-length(theInput$predictors)
   #cache these values
   monthsAhead<<-seq(lastMnthCnt+1,lastMnthCnt+120,1)
-  
+
   theInput
 }
-save(parseJSON,file="parseJSON.RData")

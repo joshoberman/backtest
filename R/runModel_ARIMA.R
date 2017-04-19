@@ -1,9 +1,8 @@
-source('backTestARIMA.R');source('weightProjections.R')
 runModel<-function(input){
   library(forecast)
   theSeries<-as.integer(input$employment)
   themonthCounters<-as.integer(input$empl_monthCounter)
-  
+
   theSeries.ts<-ts(theSeries,frequency = 12)
   arima_model<-auto.arima(theSeries.ts,D = 1,seasonal=TRUE)
   arima_preds<-forecast(arima_model,h=120)
@@ -18,8 +17,8 @@ runModel<-function(input){
                predicted_monthCounters=monthsAhead,outcome_naics=as.character(input$outcome))
   output<-c(output,backScore)
   output$predictors<-NA;output$predictor_id<-input$predictor_id
-  
+
   output
 }
 
-save(runModel,backTestARIMA,file="Auto-ARIMA.RData")
+save(runModel, file="R/Auto-ARIMA.RData")
