@@ -1,8 +1,8 @@
 export("runCalc")
 
-import("base64enc")
 import("data.table")
 import("earth")
 import("forecast")
 import("jsonlite")
 import("vars")
+import("stringr")

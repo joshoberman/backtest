@@ -1,9 +1,6 @@
-parseJSON<-function(base64json){
-  library(stringr)
-  library(base64enc)
-  library(jsonlite)
-  jsonInput<-rawToChar( base64decode( base64json ) )
-  theInput<-fromJSON( jsonInput )
+parseJSON<-function(jsonInput){
+
+  theInput <- jsonlite::fromJSON( jsonInput )
   theInput$model_name<-as.character(theInput$model_name)
   theInput$outcome<-as.character(theInput$outcome)
   theInput$predictor_monthCounters<-lapply(theInput$predictor_monthCounters,as.integer)

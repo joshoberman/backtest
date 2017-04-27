@@ -24,7 +24,7 @@ prepareJSON<-function(outputList,keep_data=F){
                  predictor_id=as.integer(outputList$predictor_id))
   }
 
-  output<-toJSON(output,auto_unbox = T)
+  output<-jsonlite::toJSON(output,auto_unbox = T)
 
   output
 

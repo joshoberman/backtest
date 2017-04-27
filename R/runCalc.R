@@ -1,10 +1,9 @@
-runCalc<-function(base64Json, keep_backtest=F){
-  if(exists("res",envir = globalenv())){rm(res)}
+runCalc<-function(inputJSON, keep_backtest=F){
+  if(exists("res")){rm(res)}
   res<-tryCatch(expr={
-    print("running calculation")
 
     #parse the JSON
-    theData <- parseJSON(base64Json)
+    theData <- parseJSON(inputJSON)
 
     #subset all time series to before the base date
     theData <- subsetToBaseDate(theData)
@@ -12,10 +11,8 @@ runCalc<-function(base64Json, keep_backtest=F){
     #extract the model_name
     model <- theData$model_name
 
-    print(model)
-
     #get the model function file
-    modelFunctionFile <- paste("R/",model,".RData",sep="")
+    modelFunctionFile <- system.file("calc_engine", paste0(model,".RData"), package = "soiCalcEngine")
     load(modelFunctionFile)
 
     #this runs and backtests the model

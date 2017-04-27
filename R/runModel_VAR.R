@@ -1,5 +1,5 @@
 runModel<-function(input){
-  library(data.table)
+
   formatted<-data.frame(var_name=character(),monthCounter=numeric(),var_value=numeric())
 
   #input$empl_monthCounter<-subset(input$empl_monthCounter,input$empl_monthCounter<=input$baseDate)
