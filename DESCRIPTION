@@ -5,12 +5,12 @@ Version: 0.1.0
 Author: Josh Oberman
 Maintainer: Josh Oberman <joshua.oberman@inquidia.com>
 Imports:
-    data.table,
-    earth,
-    forecast,
-    jsonlite,
-    stringr,
-    vars
+    data.table (>= 1.9.6),
+    earth (>= 4.5.0),
+    forecast (>= 7.0),
+    jsonlite(>= 1.0),
+    stringr(>= 1.0.0),
+    vars(>= 1.5-2)
 Description: This package allows the DWD to run backtested models at scale in Microsoft Azure batch
     The package exports a single function: runCalc() that can be run on any Azure VM where this packag is installed
 License: file LICENSE
