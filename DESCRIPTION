@@ -1,6 +1,6 @@
-Package: soiCalcEngine
+Package: backtest
 Type: Package
-Title: Run Compute Engine for State of Indiana's Demand-Driven Workforce System
+Title: Backtest many time series models for automatic model selection
 Version: 0.1.0
 Author: Josh Oberman
 Maintainer: Josh Oberman <joshua.oberman@inquidia.com>
@@ -11,8 +11,8 @@ Imports:
     jsonlite(>= 1.0),
     stringr(>= 1.0.0),
     vars(>= 1.5-2)
-Description: This package allows the DWD to run backtested models at scale in Microsoft Azure batch
-    The package exports a single function: runCalc() that can be run on any Azure VM where this packag is installed
-License: file LICENSE
+Description: This package allows extensive backtesting of many time series models with different sets of endogenous time series.
+    The package exports a single function: runCalc() that expects a well-formed JSON including model name and any time series of interest
+License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
